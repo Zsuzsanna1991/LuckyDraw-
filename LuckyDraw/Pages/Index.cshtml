@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">TÚRÁZZ ÉS NYERJ!</h1>
+
+    <form method="post">
+        <div class="box">
+            <p>A generált szám: <b>@Model.generaltSzam</b></p>
+            <button type="submit" class="btn">Sorsolás</button>
+        </div>
+        <div class="box">
+            @if (Model.nyeremeny != "")
+            {
+                <p>A nyereményed: <b>@Model.nyeremeny</b></p>
+            }
+            <p>@Model.message</p>
+            <img src="@Model.kepUrl" alt="Nyeremény">
+        </div>
+    </form>
+</div>
